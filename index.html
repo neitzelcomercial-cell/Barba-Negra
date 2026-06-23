@@ -175,37 +175,9 @@
                         <label for="telefone">Telefone / WhatsApp</label>
                         <input type="tel" id="telefone" placeholder="47 98905-2566" required />
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dia">Dia da Semana</label>
-                            <select id="dia">
-                                <option value="">Selecione</option>
-                                <option value="segunda">Segunda-feira</option>
-                                <option value="terca">Terça-feira</option>
-                                <option value="quarta">Quarta-feira</option>
-                                <option value="quinta">Quinta-feira</option>
-                                <option value="sexta">Sexta-feira</option>
-                                <option value="sabado">Sábado</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="horario">Horário</label>
-                            <select id="horario">
-                                <option value="">Selecione</option>
-                                <option value="08:00">08:00</option>
-                                <option value="09:00">09:00</option>
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                                <option value="12:00">12:00</option>
-                                <option value="13:00">13:00</option>
-                                <option value="14:00">14:00</option>
-                                <option value="15:00">15:00</option>
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                                <option value="18:00">18:00</option>
-                                <option value="19:00">19:00</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="dataDesejada">Data e horário desejado</label>
+                        <input type="text" id="dataDesejada" placeholder="Ex: 25/06 (quinta) às 15h" />
                     </div>
                     <div class="form-group">
                         <label for="servicosMsg">Serviços desejados</label>
@@ -214,6 +186,7 @@
                     <a href="#" class="btn btn--primary btn--full" onclick="return agendar()">
                         ▲ Agendar via WhatsApp
                     </a>
+                    <p class="booking__form-note">O agendamento será enviado pelo WhatsApp</p>
                 </div>
 
                 <div class="booking__info">

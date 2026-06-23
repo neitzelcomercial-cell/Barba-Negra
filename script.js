@@ -6,29 +6,21 @@
 function agendar() {
     const nome = document.getElementById('nome').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
-    const dia = document.getElementById('dia').value;
-    const horario = document.getElementById('horario').value;
+    const dataDesejada = document.getElementById('dataDesejada').value.trim();
     const servicos = document.getElementById('servicosMsg').value.trim();
 
-    if (!nome || !telefone || !dia || !horario) {
-        alert('Por favor, preencha todos os campos do agendamento.');
+    if (!nome || !telefone) {
+        alert('Por favor, preencha seu nome e telefone.');
         return;
     }
-
-    const diasSemana = {
-        segunda: 'Segunda-feira',
-        terca: 'Terça-feira',
-        quarta: 'Quarta-feira',
-        quinta: 'Quinta-feira',
-        sexta: 'Sexta-feira',
-        sabado: 'Sábado'
-    };
 
     let mensagem = 'Olá! Gostaria de agendar um horário:%0A';
     mensagem += 'Nome: ' + nome + '%0A';
     mensagem += 'Telefone: ' + telefone + '%0A';
-    mensagem += 'Dia: ' + (diasSemana[dia] || dia) + '%0A';
-    mensagem += 'Horário: ' + horario + '%0A';
+
+    if (dataDesejada) {
+        mensagem += 'Data/Horário: ' + dataDesejada + '%0A';
+    }
 
     if (servicos) {
         mensagem += 'Serviços: ' + servicos + '%0A';
