@@ -190,6 +190,16 @@ ul { list-style: none; }
     line-height: 1.7;
 }
 
+.hero__content .btn--outline {
+    border-color: var(--accent-brown-border);
+    color: var(--accent-brown-border);
+    margin-left: 12px;
+}
+.hero__content .btn--outline:hover {
+    background: var(--accent-brown-border);
+    color: var(--bg-primary);
+}
+
 /* ---------- SECTIONS ---------- */
 .section {
     padding: 100px 0;
