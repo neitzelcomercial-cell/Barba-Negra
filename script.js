@@ -153,7 +153,7 @@ function initAgenda() {
             mensagem += 'Serviços: ' + servicos + '%0A';
         }
 
-        const numero = '5547989052566';
+        const numero = '554791768615';
         const url = 'https://wa.me/' + numero + '?text=' + mensagem;
         window.open(url, '_blank');
         return false;
