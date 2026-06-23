@@ -2,55 +2,13 @@
    BARBA NEGRA LN — Scripts
    ============================================= */
 
-// ---------- SERVIÇOS: Seleção com soma ----------
-const servicosSelecionados = new Map();
-
-function selectService(card) {
-    const nome = card.dataset.service;
-    const price = card.dataset.price;
-
-    // Pacote Mensal não tem preço fixo — apenas toggle visual
-    if (price === 'Consulte') {
-        card.classList.toggle('service-card--selected');
-        return;
-    }
-
-    const precoNumerico = parseFloat(price.replace('R$ ', '').replace(',', '.'));
-    const isSelected = card.classList.toggle('service-card--selected');
-
-    if (isSelected) {
-        servicosSelecionados.set(nome, precoNumerico);
-    } else {
-        servicosSelecionados.delete(nome);
-    }
-
-    atualizarResumoServicos();
-}
-
-function atualizarResumoServicos() {
-    const count = servicosSelecionados.size;
-    document.getElementById('selectedCount').textContent = count;
-
-    let total = 0;
-    let nomes = [];
-    for (const [nome, preco] of servicosSelecionados) {
-        total += preco;
-        nomes.push(nome);
-    }
-    document.getElementById('selectedTotal').textContent =
-        'R$ ' + total.toFixed(2).replace('.', ',');
-
-    document.getElementById('servicosSelecionados').value =
-        count > 0 ? nomes.join(', ') + ' — Total: R$ ' + total.toFixed(2).replace('.', ',') : '';
-}
-
 // ---------- AGENDA: Envio via WhatsApp ----------
 function agendar() {
     const nome = document.getElementById('nome').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
     const dia = document.getElementById('dia').value;
     const horario = document.getElementById('horario').value;
-    const servicos = document.getElementById('servicosSelecionados').value;
+    const servicos = document.getElementById('servicosMsg').value.trim();
 
     if (!nome || !telefone || !dia || !horario) {
         alert('Por favor, preencha todos os campos do agendamento.');
@@ -76,39 +34,23 @@ function agendar() {
         mensagem += 'Serviços: ' + servicos + '%0A';
     }
 
-    // NÚMERO DO WHATSAPP — ALTERE AQUI
-    const numero = '5511999999999';
+    const numero = '5547989052566';
     const url = 'https://wa.me/' + numero + '?text=' + mensagem;
     window.open(url, '_blank');
-}
-
-// ---------- VERIFICAR HORÁRIOS DISPONÍVEIS ----------
-function verificarHorarios() {
-    const numero = '5511999999999'; // ALTERE AQUI
-    const mensagem = 'Olá! Gostaria de saber quais horários estão disponíveis para esta semana.';
-    window.open('https://wa.me/' + numero + '?text=' + encodeURIComponent(mensagem), '_blank');
-}
-
-// ---------- PRODUTOS: Compra via WhatsApp ----------
-function comprar(produto) {
-    const numero = '5511999999999'; // ALTERE AQUI
-    const mensagem = 'Olá! Tenho interesse no produto: ' + produto;
-    window.open('https://wa.me/' + numero + '?text=' + encodeURIComponent(mensagem), '_blank');
+    return false;
 }
 
 // ---------- GALERIA ----------
 const galeriaFotos = [
-    // 3 primeiras = espaço da barbearia
-    { emoji: '◧', label: 'Espaço Barbearia', tipo: 'espaço' },
-    { emoji: '◨', label: 'Estação de Corte', tipo: 'espaço' },
-    { emoji: '◩', label: 'Ambiente', tipo: 'espaço' },
-    // demais = cabelos e barbas
-    { emoji: '◆', label: 'Degradê Navalhado', tipo: 'trabalho' },
-    { emoji: '■', label: 'Barba Cheia Modelada', tipo: 'trabalho' },
-    { emoji: '▲', label: 'Corte Social', tipo: 'trabalho' },
-    { emoji: '▼', label: 'Barba Desenhada', tipo: 'trabalho' },
-    { emoji: '◈', label: 'Corte Militar', tipo: 'trabalho' },
-    { emoji: '⬥', label: 'Barba & Bigode', tipo: 'trabalho' }
+    { emoji: '◧', label: 'Espaço Barbearia' },
+    { emoji: '◨', label: 'Estação de Corte' },
+    { emoji: '◩', label: 'Ambiente' },
+    { emoji: '◆', label: 'Degradê Navalhado' },
+    { emoji: '■', label: 'Barba Cheia Modelada' },
+    { emoji: '▲', label: 'Corte Social' },
+    { emoji: '▼', label: 'Barba Desenhada' },
+    { emoji: '◈', label: 'Corte Militar' },
+    { emoji: '⬥', label: 'Barba & Bigode' }
 ];
 
 function renderizarGaleria() {

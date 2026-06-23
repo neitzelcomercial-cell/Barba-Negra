@@ -47,7 +47,7 @@
                     Sua barbearia de confiança. Aqui o estilo se encontra com a tradição,
                     e cada detalhe é pensado para realçar sua personalidade.
                 </p>
-                <a href="https://wa.me/5511999999999" target="_blank" class="btn btn--primary">▲ Agende seu Horário</a>
+                <a href="https://wa.me/5547989052566" target="_blank" class="btn btn--primary">▲ Agende seu Horário</a>
             </div>
         </div>
         <div class="hero__overlay"></div>
@@ -59,80 +59,54 @@
             <div class="section__header">
                 <span class="section__icon">◆</span>
                 <h2 class="section__title">Nossos Serviços</h2>
-                <p class="section__subtitle">Selecione os serviços que deseja</p>
+                <p class="section__subtitle">Preços e opções para você</p>
             </div>
 
             <div class="services-grid">
-                <!-- Serviço 1 -->
-                <div class="service-card" onclick="selectService(this)" data-service="Barba" data-price="R$ 35">
+                <div class="service-card">
                     <div class="service-card__icon">■</div>
                     <div class="service-card__info">
                         <h3>Barba</h3>
-                        <p>Aparar, modelar, navalhado & toalha quente</p>
                     </div>
                     <div class="service-card__price">R$ 35</div>
-                    <div class="service-card__check">▲</div>
                 </div>
-
-                <!-- Serviço 2 -->
-                <div class="service-card" onclick="selectService(this)" data-service="Corte de Cabelo" data-price="R$ 35">
+                <div class="service-card">
                     <div class="service-card__icon">▲</div>
                     <div class="service-card__info">
                         <h3>Corte de Cabelo</h3>
-                        <p>Degradê, social, militar, tesoura & máquina</p>
                     </div>
                     <div class="service-card__price">R$ 35</div>
-                    <div class="service-card__check">▲</div>
                 </div>
-
-                <!-- Serviço 3 -->
-                <div class="service-card" onclick="selectService(this)" data-service="Sobrancelha" data-price="R$ 12">
+                <div class="service-card">
                     <div class="service-card__icon">▼</div>
                     <div class="service-card__info">
                         <h3>Sobrancelha</h3>
-                        <p>Design com pinça & navalha</p>
                     </div>
                     <div class="service-card__price">R$ 12</div>
-                    <div class="service-card__check">▲</div>
                 </div>
-
-                <!-- Serviço 4 -->
-                <div class="service-card" onclick="selectService(this)" data-service="Corte + Barba" data-price="R$ 65">
+                <div class="service-card">
                     <div class="service-card__icon">◆</div>
                     <div class="service-card__info">
                         <h3>Combo Corte + Barba</h3>
-                        <p>Nosso combo mais popular</p>
                     </div>
                     <div class="service-card__price">R$ 65</div>
-                    <div class="service-card__check">▲</div>
                 </div>
-
-                <!-- Serviço 5 -->
-                <div class="service-card" onclick="selectService(this)" data-service="Combo Completo" data-price="R$ 75">
+                <div class="service-card">
                     <div class="service-card__icon">⬥</div>
                     <div class="service-card__info">
                         <h3>Combo Completo</h3>
                         <p>Corte + Barba + Sobrancelha</p>
                     </div>
                     <div class="service-card__price">R$ 75</div>
-                    <div class="service-card__check">▲</div>
                 </div>
-
-                <!-- Serviço 6 -->
-                <div class="service-card" onclick="selectService(this)" data-service="Pacote Mensal" data-price="Consulte">
+                <div class="service-card">
                     <div class="service-card__icon">◈</div>
                     <div class="service-card__info">
                         <h3>Pacotes Mensais</h3>
-                        <p>Descontos especiais para clientes fiéis<br /><em>Consulte-nos!</em></p>
+                        <p>Descontos especiais <em>Consulte-nos!</em></p>
                     </div>
                     <div class="service-card__price">▼</div>
-                    <div class="service-card__check">▲</div>
                 </div>
-            </div>
-
-            <div class="services-selected" id="servicesSelected">
-                <p>Serviços selecionados: <span id="selectedCount">0</span></p>
-                <p class="services-selected__total">Total: <span id="selectedTotal">R$ 0</span></p>
             </div>
 
             <div class="payment-info">
@@ -156,31 +130,26 @@
                     <div class="product-card__icon">◆</div>
                     <h3>Pós Barba El Guapo</h3>
                     <span class="product-card__price">R$ 60</span>
-                    <button class="btn btn--small" onclick="comprar('Pós Barba El Guapo')">Comprar</button>
                 </div>
                 <div class="product-card">
                     <div class="product-card__icon">◆</div>
                     <h3>Óleo para Barba El Guapo</h3>
                     <span class="product-card__price">R$ 55</span>
-                    <button class="btn btn--small" onclick="comprar('Óleo para Barba El Guapo')">Comprar</button>
                 </div>
                 <div class="product-card">
                     <div class="product-card__icon">◆</div>
                     <h3>Óleo para Barba Fox</h3>
                     <span class="product-card__price">R$ 45</span>
-                    <button class="btn btn--small" onclick="comprar('Óleo para Barba Fox')">Comprar</button>
                 </div>
                 <div class="product-card">
                     <div class="product-card__icon">◆</div>
                     <h3>Pomada em Pó Million</h3>
                     <span class="product-card__price">R$ 42</span>
-                    <button class="btn btn--small" onclick="comprar('Pomada em Pó Million')">Comprar</button>
                 </div>
                 <div class="product-card">
                     <div class="product-card__icon">◆</div>
                     <h3>Pomada Modeladora Fox</h3>
                     <span class="product-card__price">R$ 25</span>
-                    <button class="btn btn--small" onclick="comprar('Pomada Modeladora Fox')">Comprar</button>
                 </div>
             </div>
         </div>
@@ -192,7 +161,7 @@
             <div class="section__header">
                 <span class="section__icon">◤</span>
                 <h2 class="section__title">Agende seu Horário</h2>
-                <p class="section__subtitle">Funcionamos de Segunda a Sábado</p>
+                <p class="section__subtitle">Atendimento de Segunda a Sábado — por agendamento</p>
             </div>
 
             <div class="booking">
@@ -203,7 +172,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone / WhatsApp</label>
-                        <input type="tel" id="telefone" placeholder="(11) 99999-9999" required />
+                        <input type="tel" id="telefone" placeholder="47 98905-2566" required />
                     </div>
                     <div class="form-row">
                         <div class="form-group">
@@ -238,29 +207,28 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Serviços selecionados</label>
-                        <textarea id="servicosSelecionados" rows="2" placeholder="Selecione os serviços acima..." readonly></textarea>
+                        <label for="servicosMsg">Serviços desejados</label>
+                        <textarea id="servicosMsg" rows="2" placeholder="Ex: Corte + Barba"></textarea>
                     </div>
-                    <button class="btn btn--primary btn--full" id="agendarBtn" onclick="agendar()">
+                    <a href="#" class="btn btn--primary btn--full" onclick="return agendar()">
                         ▲ Agendar via WhatsApp
-                    </button>
+                    </a>
                 </div>
 
                 <div class="booking__info">
                     <div class="booking__hours">
                         <h3>Horários de Funcionamento</h3>
                         <ul class="hours-list">
-                            <li><span>Seg – Sex</span><span>08:00 – 20:00</span></li>
-                            <li><span>Sábado</span><span>08:00 – 18:00</span></li>
+                            <li><span>Seg – Sáb</span><span>Por agendamento</span></li>
                             <li><span>Domingo</span><span>Fechado</span></li>
                         </ul>
                     </div>
                     <div class="booking__actions">
                         <h3>Verifique horários disponíveis</h3>
                         <p>Envie uma mensagem no WhatsApp e consulte os horários livres:</p>
-                        <button class="btn btn--outline btn--full" onclick="verificarHorarios()">
+                        <a href="https://wa.me/5547989052566?text=Ol%C3%A1!%20Gostaria%20de%20saber%20quais%20hor%C3%A1rios%20est%C3%A3o%20dispon%C3%ADveis%20para%20esta%20semana." target="_blank" class="btn btn--outline btn--full">
                             ◆ Ver Horários via WhatsApp
-                        </button>
+                        </a>
                     </div>
                     <div class="booking__tips">
                         <p>▲ Chegue 5 min antes do horário</p>
@@ -303,13 +271,13 @@
                     <div class="location__icon">◤</div>
                     <h3>Endereço</h3>
                     <p class="location__address" id="enderecoTexto">
-                        Rua Exemplo, 123 – Centro<br />
-                        Cidade – SP, 01234-567
+                        Rua XV de Outubro, N°180<br />
+                        Ao lado da Hardt Doces e Salgados
                     </p>
                     <p class="location__note">
-                        <em>■ Ao lado da praça principal ■</em>
+                        <em>■ Ao lado da Hardt Doces e Salgados ■</em>
                     </p>
-                    <a href="https://maps.google.com/?q=Barba+Negra+LN" target="_blank" class="btn btn--outline">
+                    <a href="https://maps.google.com/?q=Rua+XV+de+Outubro+180+Guaramirim" target="_blank" class="btn btn--outline">
                         Abrir no Google Maps
                     </a>
                 </div>
@@ -317,8 +285,7 @@
                 <div class="location__hours">
                     <h3>Funcionamento</h3>
                     <ul>
-                        <li><span>Seg – Sex</span><span>08:00 – 20:00</span></li>
-                        <li><span>Sábado</span><span>08:00 – 18:00</span></li>
+                        <li><span>Seg – Sáb</span><span>Por agendamento</span></li>
                         <li><span>Domingo</span><span>Fechado</span></li>
                     </ul>
                 </div>
@@ -336,16 +303,16 @@
             </div>
 
             <div class="contact">
-                <a href="https://wa.me/5511999999999" target="_blank" class="contact__card contact__card--whatsapp">
+                <a href="https://wa.me/5547989052566" target="_blank" class="contact__card contact__card--whatsapp">
                     <span class="contact__icon"><svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
                     <span class="contact__label">WhatsApp</span>
-                    <span class="contact__detail">(11) 99999-9999</span>
+                    <span class="contact__detail">55 47 98905-2566</span>
                 </a>
 
-                <a href="https://instagram.com/barbanegraln" target="_blank" class="contact__card contact__card--instagram">
+                <a href="https://instagram.com/barbearia_barbanegra_ln" target="_blank" class="contact__card contact__card--instagram">
                     <span class="contact__icon"><svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span>
                     <span class="contact__label">Instagram</span>
-                    <span class="contact__detail">@barbanegraln</span>
+                    <span class="contact__detail">@barbearia_barbanegra_ln</span>
                 </a>
 
                 <a href="https://facebook.com/barbanegraln" target="_blank" class="contact__card contact__card--facebook">
