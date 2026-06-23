@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neitzelcomercial-cell.github.io/Barba-Negra/sitemap.xml
