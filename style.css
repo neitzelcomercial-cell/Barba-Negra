@@ -384,6 +384,45 @@ ul { list-style: none; }
     pointer-events: none;
     opacity: 0.5;
 }
+.hero__bg-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.06;
+    animation: heroLogoFloat 8s ease-in-out infinite;
+    filter: blur(1px);
+}
+.hero__bg-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@keyframes heroLogoFloat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+    33% { transform: translate(-50%, -52%) scale(1.02) rotate(2deg); }
+    66% { transform: translate(-50%, -48%) scale(0.98) rotate(-2deg); }
+}
+
+@media (max-width: 700px) {
+    .hero__bg-logo {
+        width: 300px;
+        height: 300px;
+        opacity: 0.05;
+    }
+}
+@media (min-width: 1400px) {
+    .hero__bg-logo {
+        width: 650px;
+        height: 650px;
+    }
+}
 .hero__inner {
     position: relative;
     z-index: 1;
