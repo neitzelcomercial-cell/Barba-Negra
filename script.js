@@ -231,15 +231,7 @@ function mostrarToast(mensagem, tipo) {
 // GALERIA com navegação
 // =============================================
 const galeriaFotos = [
-    { src: 'assets/espaco-barbearia.jpeg', label: 'Espaço Barbearia' },
-    { emoji: '◨', label: 'Estação de Corte' },
-    { emoji: '◩', label: 'Ambiente' },
-    { emoji: '◆', label: 'Degradê Navalhado' },
-    { emoji: '■', label: 'Barba Cheia Modelada' },
-    { emoji: '▲', label: 'Corte Social' },
-    { emoji: '▼', label: 'Barba Desenhada' },
-    { emoji: '◈', label: 'Corte Militar' },
-    { emoji: '⬥', label: 'Barba & Bigode' }
+    { src: 'assets/espaco-barbearia.jpeg', label: 'Espaço Barbearia' }
 ];
 
 let modalIndex = 0;
