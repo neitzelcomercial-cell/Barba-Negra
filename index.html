@@ -4,8 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barba Negra LN - Barbearia & Estilo</title>
-    <meta name="description" content="Barba Negra LN - Tradição & Sofisticação em Cada Corte. Agende seu horário em Guaramirim." />
+    <meta name="description" content="Barba Negra LN - Tradição & Sofisticação em Cada Corte. Agende seu horário em Rio Bonito, Joinville." />
     <meta name="theme-color" content="#080c14" />
+
+    <!-- Open Graph / WhatsApp / Redes Sociais -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://neitzelcomercial-cell.github.io/Barba-Negra/" />
+    <meta property="og:title" content="Barba Negra LN - Tradição & Sofisticação em Cada Corte" />
+    <meta property="og:description" content="Barbearia em Rio Bonito, Joinville. Cortes modernos, barba tradicional e produtos premium. Agende seu horário!" />
+    <meta property="og:image" content="https://neitzelcomercial-cell.github.io/Barba-Negra/assets/logo.jpeg" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Barba Negra LN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Barba Negra LN - Tradição & Sofisticação em Cada Corte" />
+    <meta name="twitter:description" content="Barbearia em Rio Bonito, Joinville. Cortes modernos, barba tradicional e produtos premium. Agende seu horário!" />
+    <meta name="twitter:image" content="https://neitzelcomercial-cell.github.io/Barba-Negra/assets/logo.jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -259,9 +276,14 @@
                     <p class="location__note">
                         <em>■ Ao lado da Hardt Doces e Salgados ■</em>
                     </p>
-                    <a href="https://maps.google.com/?q=Rua+Quinze+de+Outubro+180+Rio+Bonito+Joinville+SC" target="_blank" class="btn btn--outline">
-                        Abrir no Google Maps
-                    </a>
+                    <div class="location__actions">
+                        <a href="https://maps.google.com/?q=Rua+Quinze+de+Outubro+180+Rio+Bonito+Joinville+SC" target="_blank" class="btn btn--outline">
+                            Abrir no Google Maps
+                        </a>
+                        <button class="btn btn--copy" onclick="copiarEndereco()">
+                            ■ Copiar Endereço
+                        </button>
+                    </div>
                 </div>
 
                 <div class="location__hours">

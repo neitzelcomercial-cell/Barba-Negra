@@ -991,6 +991,46 @@ ul { list-style: none; }
     font-size: 0.84rem;
     margin-bottom: 22px;
 }
+.location__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+}
+.location__actions .btn--copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 14px 30px;
+    border: 1px solid var(--accent-brown-light);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: transparent;
+    color: var(--accent-brown-light);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+.location__actions .btn--copy:hover {
+    background: var(--accent-brown-light);
+    color: var(--bg-primary);
+    box-shadow: 0 4px 24px rgba(92,58,30,0.25);
+}
+.location__actions .btn--copy.copiado {
+    border-color: #25D366;
+    color: #25D366;
+    background: rgba(37,211,102,0.08);
+}
+.location__actions .btn--copy.copiado:hover {
+    background: #25D366;
+    color: #fff;
+}
 
 .location__hours {
     background: var(--bg-card);

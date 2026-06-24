@@ -474,6 +474,49 @@ function initSmoothScroll() {
 }
 
 // =============================================
+// COPIAR ENDEREÇO
+// =============================================
+function copiarEndereco() {
+    const endereco = 'Rua XV de Outubro, N°180 - Rio Bonito, Joinville/SC (ao lado da Hardt Doces e Salgados)';
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(endereco).then(() => {
+            mostrarToast('Endereço copiado! 📋', 'success');
+        }).catch(() => {
+            fallbackCopiar(endereco);
+        });
+    } else {
+        fallbackCopiar(endereco);
+    }
+
+    const btn = document.querySelector('.btn--copy');
+    if (btn) {
+        btn.classList.add('copiado');
+        btn.textContent = '✓ Copiado!';
+        setTimeout(() => {
+            btn.classList.remove('copiado');
+            btn.innerHTML = '■ Copiar Endereço';
+        }, 2500);
+    }
+}
+
+function fallbackCopiar(texto) {
+    const textarea = document.createElement('textarea');
+    textarea.value = texto;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+        document.execCommand('copy');
+        mostrarToast('Endereço copiado! 📋', 'success');
+    } catch (e) {
+        mostrarToast('Clique e copie o endereço manualmente.', 'info');
+    }
+    document.body.removeChild(textarea);
+}
+
+// =============================================
 // PARTÍCULAS DE FUNDO
 // =============================================
 function initParticles() {
