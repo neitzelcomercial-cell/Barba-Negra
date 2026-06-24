@@ -119,15 +119,8 @@ function initScrollSpy() {
 // AGENDA via WhatsApp
 // =============================================
 function initAgenda() {
-    const agendaBtn = document.querySelector('#agenda .btn--primary');
+    const agendaBtn = document.getElementById('btnAgendar');
     if (!agendaBtn) return;
-
-    // Se for o botão inline no form, o onclick original funciona,
-    // mas vamos usar nosso próprio handler
-    if (agendaBtn.getAttribute('onclick')) {
-        // já tem o onclick do HTML, mantemos
-        return;
-    }
 
     window.agendar = function () {
         const nome = document.getElementById('nome').value.trim();
@@ -136,7 +129,6 @@ function initAgenda() {
         const servicos = document.getElementById('servicosMsg').value.trim();
 
         if (!nome || !telefone) {
-            // Toast notification
             mostrarToast('Por favor, preencha seu nome e telefone.', 'warning');
             return false;
         }
@@ -158,6 +150,11 @@ function initAgenda() {
         window.open(url, '_blank');
         return false;
     };
+
+    agendaBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        agendar();
+    });
 }
 
 // =============================================
@@ -234,7 +231,7 @@ function mostrarToast(mensagem, tipo) {
 // GALERIA com navegação
 // =============================================
 const galeriaFotos = [
-    { emoji: '◧', label: 'Espaço Barbearia' },
+    { src: 'assets/espaco-barbearia.jpeg', label: 'Espaço Barbearia' },
     { emoji: '◨', label: 'Estação de Corte' },
     { emoji: '◩', label: 'Ambiente' },
     { emoji: '◆', label: 'Degradê Navalhado' },
@@ -251,8 +248,16 @@ function renderizarGaleria() {
     const grid = document.getElementById('galleryGrid');
     if (!grid) return;
 
-    grid.innerHTML = galeriaFotos.map((f, i) =>
-        '<div class="gallery-item reveal-scale" onclick="abrirModal(' + i + ')">' +
+    grid.innerHTML = galeriaFotos.map((f, i) => {
+        if (f.src) {
+            return '<div class="gallery-item reveal-scale" onclick="abrirModal(' + i + ')">' +
+                '<img src="' + f.src + '" alt="' + f.label + '" class="gallery-item__img" />' +
+                '<div class="gallery-item__overlay">' +
+                    '<span>' + f.label + '</span>' +
+                '</div>' +
+            '</div>';
+        }
+        return '<div class="gallery-item reveal-scale" onclick="abrirModal(' + i + ')">' +
             '<div class="gallery-item__placeholder">' +
                 '<span>' + f.emoji + '</span>' +
                 '<span>' + f.label + '</span>' +
@@ -260,8 +265,8 @@ function renderizarGaleria() {
             '<div class="gallery-item__overlay">' +
                 '<span>' + f.label + '</span>' +
             '</div>' +
-        '</div>'
-    ).join('');
+        '</div>';
+    }).join('');
 
     // Re-aplica scroll reveal nos novos itens
     initScrollReveal();
@@ -272,61 +277,71 @@ function renderizarFotoModal(index) {
     const img = document.getElementById('modalImg');
     const counter = document.getElementById('modalCounter');
 
-    const canvas = document.createElement('canvas');
-    canvas.width = 700;
-    canvas.height = 500;
-    const ctx = canvas.getContext('2d');
+    if (foto.src) {
+        // Imagem real
+        img.src = foto.src;
+        img.alt = foto.label;
+        img.style.objectFit = 'cover';
+        img.style.maxWidth = '92vw';
+        img.style.maxHeight = '85vh';
+    } else {
+        // Placeholder com canvas
+        const canvas = document.createElement('canvas');
+        canvas.width = 700;
+        canvas.height = 500;
+        const ctx = canvas.getContext('2d');
 
-    // Fundo gradiente premium
-    const grad = ctx.createRadialGradient(350, 250, 50, 350, 250, 350);
-    grad.addColorStop(0, '#1a3050');
-    grad.addColorStop(0.5, '#0f1a2b');
-    grad.addColorStop(1, '#080c14');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 700, 500);
+        // Fundo gradiente premium
+        const grad = ctx.createRadialGradient(350, 250, 50, 350, 250, 350);
+        grad.addColorStop(0, '#1a3050');
+        grad.addColorStop(0.5, '#0f1a2b');
+        grad.addColorStop(1, '#080c14');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 700, 500);
 
-    // Moldura dourada
-    ctx.strokeStyle = '#C9A96E';
-    ctx.lineWidth = 2;
-    ctx.shadowColor = 'rgba(201, 169, 110, 0.1)';
-    ctx.shadowBlur = 10;
-    ctx.strokeRect(25, 25, 650, 450);
-    ctx.shadowBlur = 0;
+        // Moldura dourada
+        ctx.strokeStyle = '#C9A96E';
+        ctx.lineWidth = 2;
+        ctx.shadowColor = 'rgba(201, 169, 110, 0.1)';
+        ctx.shadowBlur = 10;
+        ctx.strokeRect(25, 25, 650, 450);
+        ctx.shadowBlur = 0;
 
-    // Detalhes decorativos nos cantos
-    const cornerLen = 15;
-    ctx.strokeStyle = '#C9A96E';
-    ctx.lineWidth = 1.5;
-    // Cantos superiores
-    ctx.beginPath();
-    ctx.moveTo(25, 25 + cornerLen); ctx.lineTo(25, 25); ctx.lineTo(25 + cornerLen, 25);
-    ctx.moveTo(675 - cornerLen, 25); ctx.lineTo(675, 25); ctx.lineTo(675, 25 + cornerLen);
-    ctx.moveTo(25, 475 - cornerLen); ctx.lineTo(25, 475); ctx.lineTo(25 + cornerLen, 475);
-    ctx.moveTo(675 - cornerLen, 475); ctx.lineTo(675, 475); ctx.lineTo(675, 475 - cornerLen);
-    ctx.stroke();
+        // Detalhes decorativos nos cantos
+        const cornerLen = 15;
+        ctx.strokeStyle = '#C9A96E';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(25, 25 + cornerLen); ctx.lineTo(25, 25); ctx.lineTo(25 + cornerLen, 25);
+        ctx.moveTo(675 - cornerLen, 25); ctx.lineTo(675, 25); ctx.lineTo(675, 25 + cornerLen);
+        ctx.moveTo(25, 475 - cornerLen); ctx.lineTo(25, 475); ctx.lineTo(25 + cornerLen, 475);
+        ctx.moveTo(675 - cornerLen, 475); ctx.lineTo(675, 475); ctx.lineTo(675, 475 - cornerLen);
+        ctx.stroke();
 
-    // Emoji principal
-    ctx.font = '100px serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = '#C9A96E';
-    ctx.shadowColor = 'rgba(201, 169, 110, 0.15)';
-    ctx.shadowBlur = 20;
-    ctx.fillText(foto.emoji, 350, 220);
-    ctx.shadowBlur = 0;
+        // Emoji principal
+        ctx.font = '100px serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#C9A96E';
+        ctx.shadowColor = 'rgba(201, 169, 110, 0.15)';
+        ctx.shadowBlur = 20;
+        ctx.fillText(foto.emoji, 350, 220);
+        ctx.shadowBlur = 0;
 
-    // Label
-    ctx.font = '600 22px Cinzel, serif';
-    ctx.fillStyle = '#eeede9';
-    ctx.fillText(foto.label, 350, 330);
+        // Label
+        ctx.font = '600 22px Cinzel, serif';
+        ctx.fillStyle = '#eeede9';
+        ctx.fillText(foto.label, 350, 330);
 
-    // Subtítulo decorativo
-    ctx.font = '12px Inter, sans-serif';
-    ctx.fillStyle = '#b8b4ae';
-    ctx.fillText('◆ Barba Negra LN ◆', 350, 375);
+        // Subtítulo decorativo
+        ctx.font = '12px Inter, sans-serif';
+        ctx.fillStyle = '#b8b4ae';
+        ctx.fillText('◆ Barba Negra LN ◆', 350, 375);
 
-    img.src = canvas.toDataURL();
-    img.alt = foto.label;
+        img.src = canvas.toDataURL();
+        img.alt = foto.label;
+        img.style.objectFit = 'contain';
+    }
 
     if (counter) {
         counter.textContent = (index + 1) + ' / ' + galeriaFotos.length;
