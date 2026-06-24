@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barba Negra LN — Tradição & Sofisticação em Cada Corte</title>
+    <meta name="description" content="Barbearia em Rio Bonito, Joinville. Cortes modernos, barba tradicional e produtos premium. Agende seu horário!" />
+    <meta name="theme-color" content="#080c14" />
+
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://neitzelcomercial-cell.github.io/Barba-Negra/compartilhar" />
+    <meta property="og:title" content="🪒 Barba Negra LN — Tradição & Sofisticação em Cada Corte" />
+    <meta property="og:description" content="📍 Rua XV de Outubro, 180 — Rio Bonito, Joinville/SC | 📲 (47) 99176-8615" />
+    <meta property="og:image" content="https://neitzelcomercial-cell.github.io/Barba-Negra/assets/logo.jpeg" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Barba Negra LN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Barba Negra LN — Tradição & Sofisticação em Cada Corte" />
+    <meta name="twitter:description" content="📍 Rua XV de Outubro, 180 — Rio Bonito, Joinville/SC | 📲 (47) 99176-8615" />
+    <meta name="twitter:image" content="https://neitzelcomercial-cell.github.io/Barba-Negra/assets/logo.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ============ RESET ============ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #080c14;
+            --bg-card: rgba(18, 30, 50, 0.55);
+            --gold: #C9A96E;
+            --gold-dim: #a88a4a;
+            --brown: #5C3A1E;
+            --brown-light: #8B6535;
+            --text: #eeede9;
+            --text2: #b8b4ae;
+            --text3: #7a7670;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image:
+                radial-gradient(ellipse 600px 300px at 20% 80%, rgba(92,58,30,0.10), transparent),
+                radial-gradient(ellipse 500px 500px at 80% 20%, rgba(26,58,107,0.08), transparent),
+                radial-gradient(ellipse 400px 400px at 50% 50%, rgba(201,169,110,0.03), transparent);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* ============ PARTICLES BG ============ */
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.1;
+            animation: float linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 0.15; }
+            90% { opacity: 0.15; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        /* ============ CARD PRINCIPAL ============ */
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            width: 100%;
+            background: rgba(10, 14, 23, 0.8);
+            backdrop-filter: blur(24px) saturate(1.3);
+            -webkit-backdrop-filter: blur(24px) saturate(1.3);
+            border: 1px solid rgba(201, 169, 110, 0.12);
+            border-radius: 28px;
+            padding: 42px 32px 36px;
+            text-align: center;
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.5),
+                0 0 80px rgba(201,169,110,0.04),
+                inset 0 1px 0 rgba(201,169,110,0.06);
+            animation: cardEntry 1s ease-out;
+        }
+
+        @keyframes cardEntry {
+            0% { opacity: 0; transform: translateY(40px) scale(0.96); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Moldura decorativa */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(201, 169, 110, 0.08);
+            border-radius: 22px;
+            pointer-events: none;
+        }
+
+        /* Cantos ornamentais */
+        .corner {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-color: var(--gold);
+            border-style: solid;
+            opacity: 0.3;
+        }
+        .corner--tl { top: 14px; left: 14px; border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
+        .corner--tr { top: 14px; right: 14px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; }
+        .corner--bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; }
+        .corner--br { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; }
+
+        /* ============ LOGO ============ */
+        .logo-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+        }
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent, rgba(201,169,110,0.15), transparent 60%, rgba(201,169,110,0.08) 80%, transparent);
+            animation: rotateGlow 6s linear infinite;
+        }
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .logo-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            border: 2px solid rgba(201,169,110,0.2);
+        }
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 40px rgba(201,169,110,0.15);
+        }
+
+        /* ============ LETRAS ESPECIAIS ============ */
+        .title {
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 900;
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 2px;
+            background: linear-gradient(135deg, #f5e6c8 0%, var(--gold) 40%, var(--gold-dim) 70%, #f5e6c8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            filter: drop-shadow(0 0 30px rgba(201,169,110,0.2));
+            letter-spacing: 3px;
+        }
+
+        .title-sub {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.4rem;
+            color: var(--gold-dim);
+            margin-bottom: 6px;
+            letter-spacing: 4px;
+            line-height: 1;
+            opacity: 0.8;
+        }
+
+        .title-ln {
+            display: block;
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 2px;
+            margin-bottom: 12px;
+        }
+
+        /* Divisor decorativo */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .divider__line {
+            flex: 1;
+            max-width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold));
+        }
+        .divider__line:last-child {
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+        .divider__diamond {
+            color: var(--gold);
+            font-size: 0.7rem;
+            opacity: 0.6;
+        }
+
+        /* Tagline */
+        .tagline {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--brown-light);
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        /* ============ INFO ============ */
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 22px 0;
+        }
+
+        .info__item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(18, 30, 50, 0.35);
+            border: 1px solid rgba(201, 169, 110, 0.08);
+            border-radius: 14px;
+            padding: 12px 18px;
+            text-align: left;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .info__item:hover {
+            background: rgba(26, 48, 80, 0.5);
+            border-color: rgba(201, 169, 110, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .info__icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.08);
+            border: 1px solid rgba(201, 169, 110, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .info__content {
+            flex: 1;
+        }
+        .info__label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text3);
+            margin-bottom: 1px;
+        }
+        .info__value {
+            font-size: 0.88rem;
+            color: var(--text);
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        .info__value strong {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ============ SERVIÇOS EM DESTAQUE ============ */
+        .services-mini {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 18px 0 22px;
+        }
+        .service-mini {
+            background: rgba(18, 30, 50, 0.25);
+            border: 1px solid rgba(201, 169, 110, 0.06);
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+        }
+        .service-mini__name {
+            color: var(--text2);
+            font-weight: 300;
+        }
+        .service-mini__price {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        /* ============ BOTÃO WHATSAPP ============ */
+        .btn-whats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #1f8c3e, #25D366);
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-whats::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 50%);
+            pointer-events: none;
+        }
+        .btn-whats:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.35);
+        }
+        .btn-whats:active {
+            transform: translateY(-1px);
+        }
+        .btn-whats svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        .btn-whats--sec {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 13px 24px;
+            margin-top: 10px;
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid rgba(201, 169, 110, 0.25);
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-whats--sec:hover {
+            background: rgba(201, 169, 110, 0.08);
+            border-color: var(--gold);
+        }
+
+        /* ============ REDES SOCIAIS ============ */
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .social__link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(201, 169, 110, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social__link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        .social__link:hover {
+            transform: translateY(-3px);
+        }
+        .social__link--insta:hover {
+            color: #E4405F;
+            border-color: #E4405F;
+            box-shadow: 0 4px 16px rgba(228,64,95,0.15);
+        }
+        .social__link--face:hover {
+            color: #1877F2;
+            border-color: #1877F2;
+            box-shadow: 0 4px 16px rgba(24,119,242,0.15);
+        }
+
+        /* ============ FOOTER ============ */
+        .footer-card {
+            margin-top: 22px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(201, 169, 110, 0.06);
+        }
+        .footer-card p {
+            font-size: 0.7rem;
+            color: var(--text3);
+            letter-spacing: 0.5px;
+        }
+        .footer-card .footer-sig {
+            font-family: 'Great Vibes', cursive;
+            color: var(--gold-dim);
+            font-size: 0.85rem;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* ============ ÍCONE DE COMPARTILHAR ============ */
+        .share-hint {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 10;
+            background: rgba(10, 14, 23, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(201, 169, 110, 0.12);
+            border-radius: 12px;
+            padding: 8px 14px 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: var(--text2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out 1.5s both;
+        }
+        .share-hint:hover {
+            background: rgba(26, 48, 80, 0.6);
+            border-color: rgba(201, 169, 110, 0.25);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* ============ BOTÃO COPIAR LINK ============ */
+        .btn-copy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 0.72rem;
+            color: var(--text3);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-copy-link:hover {
+            background: rgba(201, 169, 110, 0.06);
+            color: var(--gold-dim);
+        }
+        .btn-copy-link.copied {
+            color: #25D366;
+        }
+
+        /* ============ TOAST ============ */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(10, 14, 23, 0.92);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(201, 169, 110, 0.15);
+            border-radius: 12px;
+            padding: 12px 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-size: 0.85rem;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            pointer-events: none;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        /* ============ RESPONSIVO ============ */
+        @media (max-width: 500px) {
+            body { padding: 12px; }
+            .card { padding: 30px 20px 28px; }
+            .title { font-size: 1.5rem; letter-spacing: 2px; }
+            .title-sub { font-size: 1.1rem; }
+            .logo-wrapper { width: 100px; height: 100px; margin-bottom: 16px; }
+            .info__item { padding: 10px 14px; }
+            .services-mini { grid-template-columns: 1fr; }
+            .share-hint { display: none; }
+            .btn-whats { font-size: 0.9rem; padding: 14px 20px; }
+        }
+
+        @media (max-width: 380px) {
+            .card { padding: 22px 14px 20px; }
+            .title { font-size: 1.25rem; }
+            .logo-wrapper { width: 80px; height: 80px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PARTICULAS ===== -->
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <!-- ===== HINT COMPARTILHAR ===== -->
+    <button class="share-hint" onclick="copiarLink()" title="Compartilhar este cartão" id="shareHint">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+        <span>Compartilhar</span>
+    </button>
+
+    <!-- ===== CARD PRINCIPAL ===== -->
+    <div class="card" role="main">
+
+        <!-- Cantos decorativos -->
+        <div class="corner corner--tl"></div>
+        <div class="corner corner--tr"></div>
+        <div class="corner corner--bl"></div>
+        <div class="corner corner--br"></div>
+
+        <!-- Logo -->
+        <div class="logo-wrapper">
+            <img
+                src="assets/logo.jpeg"
+                alt="Barba Negra LN"
+                class="logo-img"
+                onerror="this.style.display='none'"
+            />
+        </div>
+
+        <!-- Título com letras especiais -->
+        <div class="title-sub">✦  Tradição & Estilo  ✦</div>
+        <h1 class="title">𝕭𝖆𝖗𝖇𝖆 𝕹𝖊𝖌𝖗𝖆</h1>
+        <span class="title-ln">❖  𝐋 𝐍  ❖</span>
+
+        <div class="divider">
+            <span class="divider__line"></span>
+            <span class="divider__diamond">◇ ◆ ◇</span>
+            <span class="divider__line"></span>
+        </div>
+
+        <p class="tagline">⚜  Sofisticação em cada corte  ⚜</p>
+
+        <!-- Informações -->
+        <div class="info">
+
+            <div class="info__item">
+                <div class="info__icon">📍</div>
+                <div class="info__content">
+                    <div class="info__label">Endereço</div>
+                    <div class="info__value">
+                        <strong>Rua XV de Outubro, 180</strong><br />
+                        Rio Bonito, Joinville — SC
+                    </div>
+                </div>
+            </div>
+
+            <div class="info__item">
+                <div class="info__icon">📱</div>
+                <div class="info__content">
+                    <div class="info__label">WhatsApp</div>
+                    <div class="info__value"><strong>(47) 99176-8615</strong></div>
+                </div>
+            </div>
+
+            <div class="info__item">
+                <div class="info__icon">🕐</div>
+                <div class="info__content">
+                    <div class="info__label">Funcionamento</div>
+                    <div class="info__value">Seg a Sáb — <strong>por agendamento</strong></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Serviços em destaque -->
+        <div class="services-mini">
+            <div class="service-mini">
+                <span class="service-mini__name">✂ Corte</span>
+                <span class="service-mini__price">R$ 35</span>
+            </div>
+            <div class="service-mini">
+                <span class="service-mini__name">▣ Barba</span>
+                <span class="service-mini__price">R$ 35</span>
+            </div>
+            <div class="service-mini">
+                <span class="service-mini__name">◈ Corte + Barba</span>
+                <span class="service-mini__price">R$ 65</span>
+            </div>
+            <div class="service-mini">
+                <span class="service-mini__name">⬦ Completo</span>
+                <span class="service-mini__price">R$ 75</span>
+            </div>
+        </div>
+
+        <!-- Botão WhatsApp -->
+        <a href="https://wa.me/554791768615?text=Ol%C3%A1!%20Vi%20o%20cart%C3%A3o%20da%20Barba%20Negra%20LN%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="btn-whats">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span>Agendar via WhatsApp</span>
+        </a>
+
+        <a href="https://wa.me/554791768615?text=Ol%C3%A1!%20Gostaria%20de%20saber%20quais%20hor%C3%A1rios%20est%C3%A3o%20dispon%C3%ADveis%20para%20esta%20semana." target="_blank" class="btn-whats--sec">
+            ◇  Ver Horários Disponíveis  ◇
+        </a>
+
+        <!-- Redes Sociais -->
+        <div class="social">
+            <a href="https://instagram.com/barbearia_barbanegra_ln" target="_blank" class="social__link social__link--insta" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://facebook.com/barbanegraln" target="_blank" class="social__link social__link--face" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-card">
+            <p>Barba Negra LN © 2026</p>
+            <p class="footer-sig">✦ Tradição & Sofisticação ✦</p>
+        </div>
+
+    </div>
+
+    <!-- Botão copiar link -->
+    <button class="btn-copy-link" onclick="copiarLink()" id="btnCopyLink">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        Copiar link para compartilhar
+    </button>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <span id="toastMsg">Link copiado!</span>
+    </div>
+
+    <script>
+        // ===== PARTÍCULAS =====
+        (function initParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            const isMobile = window.innerWidth < 500;
+            const count = isMobile ? 10 : 20;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const s = 1.5 + Math.random() * 2.5;
+                p.style.width = s + 'px';
+                p.style.height = s + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 20 + 's';
+                p.style.animationDuration = (15 + Math.random() * 25) + 's';
+                container.appendChild(p);
+            }
+        })();
+
+        // ===== TOAST =====
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toastMsg');
+            if (!toast || !msgEl) return;
+            msgEl.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2800);
+        }
+
+        // ===== COPIAR LINK =====
+        function copiarLink() {
+            const url = window.location.href;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(() => {
+                    showToast('🔗 Link copiado! Compartilhe no WhatsApp 💈');
+                    feedbackCopiar();
+                }).catch(() => fallbackCopiar(url));
+            } else {
+                fallbackCopiar(url);
+            }
+        }
+
+        function fallbackCopiar(texto) {
+            const ta = document.createElement('textarea');
+            ta.value = texto;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast('🔗 Link copiado! Compartilhe no WhatsApp 💈');
+                feedbackCopiar();
+            } catch (e) {
+                showToast('Selecione e copie o link manualmente.');
+            }
+            document.body.removeChild(ta);
+        }
+
+        function feedbackCopiar() {
+            const btn = document.getElementById('btnCopyLink');
+            const hint = document.getElementById('shareHint');
+            if (btn) {
+                btn.classList.add('copied');
+                btn.innerHTML = '✓ Link copiado!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Copiar link para compartilhar`;
+                }, 2500);
+            }
+        }
+
+        // ===== DETECTAR SE ABRIU PELO WHATSAPP =====
+        (function detectReferrer() {
+            // Se veio do WhatsApp, mostrar hint adaptada
+            const ref = document.referrer || '';
+            if (ref.includes('whatsapp') || ref.includes('wa.me')) {
+                const hint = document.getElementById('shareHint');
+                if (hint) {
+                    hint.innerHTML = '<span style="font-size:1.1rem">💈</span><span>Toque para copiar o link</span>';
+                }
+            }
+        })();
+    </script>
+
+</body>
+</html>
